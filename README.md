@@ -1,23 +1,24 @@
-# ModxRahulz Neon Theme
+# ModxRahulz - Neon Termux Theme
 
-A beautiful, bold, and glowing Neon theme for Termux with a top-screen banner and auto-suggestions.
+Termux ke liye ek shaandar aur glowing Neon theme jisme aapko milega ek bada bold header banner jo hamesha screen ke sabse upar (top) fit rahega, aur saath hi smart auto-suggestions ka feature bhi shaamil hai.
 
-## Features
-- **Bold Neon Letters** (Cyan, Green, and Magenta combination)
-- **Top Screen Fit** (Automatically clears the screen and fits at the top)
-- **Auto-Suggestions** (Shows smart predictions as you type)
-- **Custom Neon Prompt**
+## 🌟 Features
+- **Bold Neon Typography:** Cyan, Green, aur Magenta rangon ka glowing combination.
+- **Perfect Top Fit:** `clear` command ke saath screen hamesha saaf hokar banner top par set hota hai.
+- **Smart Auto-Suggestions:** Aapke purane commands ke aadhar par agla text pehle hi generate ho jata hai.
+- **Custom Neon Prompt:** `termux@ModxRahulz` ke saath custom bold symbols.
 
-## Creator
+## 👤 Creator
 - **dark gaara**
 
-## How to Install
+## 📥 Installation
 
-Open your Termux and paste the following commands one by one:
+Apne Termux application ko kholein aur niche diye gaye commands ko ek-ek karke copy paste karein:
 
 ```bash
+pkg update -y && pkg upgrade -y
 pkg install git -y
-git clone [https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME)
-cd YOUR_REPO_NAME
+git clone [https://github.com/Dark-Gaara/ModxRahulz](https://github.com/Dark-Gaara/ModxRahulz)
+cd ModxRahulz
 chmod +x install.sh
 ./install.sh
