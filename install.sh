@@ -30,13 +30,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8' # Dark Neon Grey suggestion color
 # Screen ko har baar clear karke top par header dikhana
 clear
 
-# Neon Header: ModxRahulz (Fixed bold 'x' aur perfectly aligned)
-echo -e "\e[1;36m   __  __           _               _____       _           _     \e[0m"
-echo -e "\e[1;36m  |  \\/  |         | |             |  __ \\     | |         | |    \e[0m"
-echo -e "\e[1;32m  | \\  / | ___   __| | \\ \\/ /      | |__) |__ _| |__  _   _| |___ \e[0m"
-echo -e "\e[1;32m  | |\\/| |/ _ \\ / _\` |  >  <       |  _  // _\` | '_ \\| | | | |_  /\e[0m"
-echo -e "\e[1;35m  | |  | | (_) | (_| | / /\\ \\      | | \\ \\ (_| | | | | |_| | |/ / \e[0m"
-echo -e "\e[1;35m  |_|  |_|\\___/ \\__,_|/_/  \\_\\     |_|  \\_\\__,_|_| |_|\\__,_|_/___|\e[0m"
+# Neon Header: ModxRahulz (Perfectly Spaced & Aligned)
+echo -e "\e[1;36m  __  __           _            _____       _           _     \e[0m"
+echo -e "\e[1;36m |  \\/  |         | |           |  __ \\     | |         | |    \e[0m"
+echo -e "\e[1;32m | \\  / | ___   __| |   \\ \\/ /  | |__) |__ _| |__  _   _| |___ \e[0m"
+echo -e "\e[1;32m | |\\/| |/ _ \\ / _\` |    >  <   |  _  // _\` | '_ \\| | | | |_  /\e[0m"
+echo -e "\e[1;35m | |  | | (_) | (_| |   / /\\ \\  | | \\ \\ (_| | | | | |_| | |/ / \e[0m"
+echo -e "\e[1;35m |_|  |_|\\___/ \\__,_|  /_/\\_\\   |_|  \\_\\__,_|_| |_|\\__,_|_/___|\e[0m"
 echo -e ""
 echo -e "\e[1;31m  ★ Creator: dark gaara ★\e[0m"
 echo -e "\e[1;33m--------------------------------------------------------\e[0m"
@@ -49,5 +49,5 @@ EOF
 # Default shell ko badal kar zsh karna
 chsh -s zsh
 
-echo -e "\e[1;32m[+] Installation poori ho gayi hai aur Banner fix ho gaya hai!\e[0m"
-echo -e "\e[1;33m[+] Naya banner dekhne ke liye Termux ko band karke dubara kholein.\e[0m"
+echo -e "\e[1;32m[+] Installation poori ho gayi hai aur spacing fix ho chuki hai!\e[0m"
+echo -e "\e[1;33m[+] Naya banner dekhne ke liye Termux ko ek baar EXIT karke dubara kholein.\e[0m"
