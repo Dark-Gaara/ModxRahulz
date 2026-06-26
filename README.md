@@ -18,7 +18,7 @@ Apne Termux application ko kholein aur niche diye gaye commands ko ek-ek karke c
 ```bash
 pkg update -y && pkg upgrade -y
 pkg install git -y
-git clone [https://github.com/Dark-Gaara/ModxRahulz](https://github.com/Dark-Gaara/ModxRahulz)
+git clone https://github.com/Dark-Gaara/ModxRahulz
 cd ModxRahulz
 chmod +x install.sh
 ./install.sh
