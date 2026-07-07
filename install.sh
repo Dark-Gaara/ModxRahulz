@@ -1,7 +1,7 @@
 #!/bin/bash
 # ---------------------------------------------------
 # Creator: dark gaara
-# Theme Name: ModxRahulz (Customizable)
+# Theme Name: ModxRahulz (Customizable & Smart History)
 # ---------------------------------------------------
 
 # 1. User se unka custom naam poochna
@@ -38,6 +38,15 @@ cat << EOF > ~/.zshrc
 # Creator: dark gaara
 # Theme Name: ModxRahulz
 # ---------------------------------------------------
+
+# --- History System (Exit ke baad bhi commands yaad rakhne ke liye) ---
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt append_history
+setopt share_history
+setopt inc_append_history
+# ----------------------------------------------------------------------
 
 # Auto-suggestions ko chalu karna
 source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
