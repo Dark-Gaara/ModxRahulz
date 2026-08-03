@@ -76,8 +76,8 @@ echo -e ""
 PROMPT='%F{cyan}%Btermux@$USER_NAME%b%f:%F{magenta}%B%~%b%f%F{green} ❯%f '
 EOF
 
-# 5. Safe Shell Change (Path error se bachne ke liye)
-chsh -s \$(which zsh)
+# 5. Default shell ko badal kar zsh karna (Syntax error fixed)
+chsh -s zsh
 
 echo ""
 echo -e "\e[1;32m[+] Installation poori ho gayi hai aur Theme Super-Optimized hai!\e[0m"
