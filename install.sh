@@ -16,10 +16,10 @@ if [ -z "$USER_NAME" ]; then
     USER_NAME="ModxRahulz"
 fi
 
-# 2. Update and Install Dependencies (ncurses-utils added here)
+# 2. Update and Install Dependencies (Switched to figlet for smooth fonts)
 echo -e "\e[1;32m[+] Updating packages...\e[0m"
 pkg update -y && pkg upgrade -y
-pkg install git zsh toilet ncurses-utils -y
+pkg install git zsh figlet ncurses-utils -y
 
 # 3. Download ZSH Plugins
 echo -e "\e[1;36m[+] Setting up ZSH plugins...\e[0m"
@@ -29,7 +29,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh-plugins/zsh-au
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh-plugins/zsh-syntax-highlighting
 
 # 4. Generate Centered Configuration
-echo -e "\e[1;33m[+] Applying Centered Configuration...\e[0m"
+echo -e "\e[1;33m[+] Applying Smooth Centered Configuration...\e[0m"
 
 cat << EOF > ~/.zshrc
 # ---------------------------------------------------
@@ -66,9 +66,9 @@ center_print() {
     awk -v cols=\$(tput cols) '{ pad=int((cols-length(\$0))/2); if(pad<0)pad=0; printf "%*s%s\n", pad, "", \$0 }'
 }
 
-# Print Centered Banner (Cyan)
+# Print Centered Banner (Cyan - Smooth Slant Font)
 printf "\e[1;36m"
-toilet -f smblock "$USER_NAME" | center_print
+figlet -f slant "$USER_NAME" | center_print
 
 # Print Centered Subtitle (Red)
 printf "\e[1;31m"
@@ -90,4 +90,4 @@ chsh -s zsh
 
 echo ""
 echo -e "\e[1;32m[+] Installation completed successfully!\e[0m"
-echo -e "\e[1;33m[+] Please type 'exit' and restart Termux to see the centered theme.\e[0m"
+echo -e "\e[1;33m[+] Please type 'exit' and restart Termux to see the smooth theme.\e[0m"
