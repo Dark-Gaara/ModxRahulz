@@ -1,35 +1,36 @@
 #!/bin/bash
 # ---------------------------------------------------
 # Creator: dark gaara
-# Theme Name: ModxRahulz (Pro & Crash-Proof Edition)
+# Theme Name: ModxRahulz
 # ---------------------------------------------------
 
-# 1. User se unka custom naam poochna (with short name tip)
+# 1. Custom Name Prompt
 echo -e "\e[1;36m=========================================\e[0m"
 echo -e "\e[1;32m       ★ ModxRahulz Theme Setup ★\e[0m"
 echo -e "\e[1;36m=========================================\e[0m"
 echo ""
-read -p "Apna Custom Banner Name likhein (Max 10 letters, Default 'ModxRahulz' ke liye ENTER): " USER_NAME
+read -p "Enter your Custom Banner Name (Max 10 letters, Press ENTER for 'ModxRahulz'): " USER_NAME
 
-# Agar user khali chhod kar enter dabata hai, toh default naam ModxRahulz set ho jayega
+# Set default name if user leaves it blank
 if [ -z "$USER_NAME" ]; then
     USER_NAME="ModxRahulz"
 fi
 
-# 2. Termux ko update karna aur zaroori tools install karna
-echo -e "\e[1;32m[+] Packages update ho rahe hain...\e[0m"
+# 2. Update and Install Dependencies
+echo -e "\e[1;32m[+] Updating packages...\e[0m"
 pkg update -y && pkg upgrade -y
-pkg install git zsh figlet -y
+# Replaced 'figlet' with 'toilet' for solid block letters
+pkg install git zsh toilet -y
 
-# 3. Auto-suggestions & Syntax Highlighting plugins download karna
-echo -e "\e[1;36m[+] Plugins set up ho rahe hain...\e[0m"
+# 3. Download Auto-suggestions & Syntax Highlighting plugins
+echo -e "\e[1;36m[+] Setting up ZSH plugins...\e[0m"
 mkdir -p ~/.zsh-plugins
 rm -rf ~/.zsh-plugins/zsh-autosuggestions ~/.zsh-plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh-plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh-plugins/zsh-syntax-highlighting
 
-# 4. Custom configuration file (.zshrc) banana
-echo -e "\e[1;33m[+] Neon theme config apply ho rahi hai...\e[0m"
+# 4. Generate custom configuration file (.zshrc)
+echo -e "\e[1;33m[+] Applying Professional Neon configuration...\e[0m"
 
 cat << EOF > ~/.zshrc
 # ---------------------------------------------------
@@ -37,7 +38,7 @@ cat << EOF > ~/.zshrc
 # Theme Name: ModxRahulz
 # ---------------------------------------------------
 
-# --- History System (Exit ke baad bhi commands yaad rakhne ke liye) ---
+# --- Smart History System ---
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -61,24 +62,24 @@ if [ -f ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; th
 fi
 # -----------------------------------------
 
-# Start hote hi screen aur scrollback buffer dono ko completely clean karna
+# Deep clean screen on startup
 printf "\e[H\e[2J\e[3J"
 
-# Custom Neon Header (Figlet tool ka use karke)
+# Solid Neon Header (Using 'toilet' with 'smblock' for filled text)
 echo -e "\e[1;36m"
-figlet "$USER_NAME"
+toilet -f smblock "$USER_NAME"
 echo -e "\e[0m"
 echo -e "\e[1;31m  ★ Creator: dark gaara ★\e[0m"
 echo -e "\e[1;33m--------------------------------------------------------\e[0m"
 echo -e ""
 
-# Custom Prompt jisme user ka chuna hua naam aur current folder aayega
+# Custom Prompt
 PROMPT='%F{cyan}%Btermux@$USER_NAME%b%f:%F{magenta}%B%~%b%f%F{green} ❯%f '
 EOF
 
-# 5. Default shell ko badal kar zsh karna (Syntax error fixed)
+# 5. Safe Shell Change
 chsh -s zsh
 
 echo ""
-echo -e "\e[1;32m[+] Installation poori ho gayi hai aur Theme Super-Optimized hai!\e[0m"
-echo -e "\e[1;33m[+] Apna naya custom banner dekhne ke liye Termux ko ek baar EXIT karke dubara kholein.\e[0m"
+echo -e "\e[1;32m[+] Installation completed successfully!\e[0m"
+echo -e "\e[1;33m[+] Please type 'exit' and restart Termux to see the new theme.\e[0m"
