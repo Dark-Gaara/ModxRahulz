@@ -16,10 +16,10 @@ if [ -z "$USER_NAME" ]; then
     USER_NAME="ModxRahulz"
 fi
 
-# 2. Update and Install Dependencies
+# 2. Update and Install Dependencies (ncurses-utils added here)
 echo -e "\e[1;32m[+] Updating packages...\e[0m"
 pkg update -y && pkg upgrade -y
-pkg install git zsh toilet -y
+pkg install git zsh toilet ncurses-utils -y
 
 # 3. Download ZSH Plugins
 echo -e "\e[1;36m[+] Setting up ZSH plugins...\e[0m"
