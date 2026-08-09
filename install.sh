@@ -16,10 +16,13 @@ if [ -z "$USER_NAME" ]; then
     USER_NAME="ModxRahulz"
 fi
 
-# 2. Update and Install Dependencies (Switched to figlet for smooth fonts)
+# Badge ke liye naam ko Uppercase (Bade aksharon) mein convert karna
+BADGE_NAME=$(echo "$USER_NAME" | tr '[:lower:]' '[:upper:]')
+
+# 2. Update and Install Dependencies (Figlet/Toilet hata diye gaye hain fast install ke liye)
 echo -e "\e[1;32m[+] Updating packages...\e[0m"
 pkg update -y && pkg upgrade -y
-pkg install git zsh figlet ncurses-utils -y
+pkg install git zsh ncurses-utils -y
 
 # 3. Download ZSH Plugins
 echo -e "\e[1;36m[+] Setting up ZSH plugins...\e[0m"
@@ -28,8 +31,15 @@ rm -rf ~/.zsh-plugins/zsh-autosuggestions ~/.zsh-plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh-plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh-plugins/zsh-syntax-highlighting
 
-# 4. Generate Centered Configuration
-echo -e "\e[1;33m[+] Applying Smooth Centered Configuration...\e[0m"
+# 4. Generate Badge and Config
+echo -e "\e[1;33m[+] Applying Modern Cyberpunk Configuration...\e[0m"
+
+# Badge ka perfect rectangle size calculate karna
+BADGE_TEXT="[ $BADGE_NAME ]"
+TEXT_LEN=${#BADGE_TEXT}
+TOTAL_WIDTH=$((TEXT_LEN + 12)) # Box ki chodaayi
+EMPTY_LINE=$(printf "%*s" $TOTAL_WIDTH "")
+TEXT_LINE=$(printf "%6s%s%6s" "" "$BADGE_TEXT" "")
 
 cat << EOF > ~/.zshrc
 # ---------------------------------------------------
@@ -60,28 +70,37 @@ fi
 printf "\e[H\e[2J\e[3J"
 
 # ---------------------------------------------------
-# Smart Centering Function
+# Smart Centering Engines
 # ---------------------------------------------------
-center_print() {
+center_badge() {
+    awk -v cols=\$(tput cols) '{ pad=int((cols-length(\$0))/2); if(pad<0)pad=0; printf "%*s\033[46;1;30m%s\033[0m\n", pad, "", \$0 }'
+}
+
+center_text() {
     awk -v cols=\$(tput cols) '{ pad=int((cols-length(\$0))/2); if(pad<0)pad=0; printf "%*s%s\n", pad, "", \$0 }'
 }
 
-# Print Centered Banner (Cyan - Smooth Slant Font)
-printf "\e[1;36m"
-figlet -f slant "$USER_NAME" | center_print
+echo ""
+
+# Print 100% Solid & Smooth Cyan Badge
+echo "$EMPTY_LINE" | center_badge
+echo "$TEXT_LINE" | center_badge
+echo "$EMPTY_LINE" | center_badge
+
+echo ""
 
 # Print Centered Subtitle (Red)
 printf "\e[1;31m"
-echo "★ Creator: dark gaara ★" | center_print
+echo "★ Creator: dark gaara ★" | center_text
 
 # Print Centered Separator (Yellow)
 printf "\e[1;33m"
-echo "------------------------------" | center_print
+echo "------------------------------" | center_text
 
 # Reset Colors
 printf "\e[0m\n"
 
-# Custom Prompt
+# Custom Prompt (Original normal size name)
 PROMPT='%F{cyan}%Btermux@$USER_NAME%b%f:%F{magenta}%B%~%b%f%F{green} ❯%f '
 EOF
 
@@ -90,4 +109,4 @@ chsh -s zsh
 
 echo ""
 echo -e "\e[1;32m[+] Installation completed successfully!\e[0m"
-echo -e "\e[1;33m[+] Please type 'exit' and restart Termux to see the smooth theme.\e[0m"
+echo -e "\e[1;33m[+] Please type 'exit' and restart Termux to see the Modern Badge theme.\e[0m"
